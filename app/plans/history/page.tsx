@@ -105,7 +105,7 @@ export default function PlanHistoryPage() {
             <Card className="h-full flex flex-col">
               <div className="flex-1">
                 <h3 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
-                  {item.plan.userProfile.name}'s Plan
+                  {item.plan.userProfile.name}&apos;s Plan
                 </h3>
                 <p className="mb-2 text-sm text-gray-600 dark:text-gray-400">
                   <strong>Goal:</strong> {item.plan.userProfile.fitnessGoal}

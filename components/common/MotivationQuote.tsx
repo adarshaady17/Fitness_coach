@@ -23,11 +23,12 @@ export default function MotivationQuote() {
     // After mount, optionally change to a random quote
     const randomQuote =
       placeholderQuotes[Math.floor(Math.random() * placeholderQuotes.length)];
-    if (randomQuote !== quote) {
+    if (randomQuote !== defaultQuote) {
       setTimeout(() => {
         setQuote(randomQuote);
       }, 100);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

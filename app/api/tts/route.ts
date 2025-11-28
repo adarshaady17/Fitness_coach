@@ -16,7 +16,9 @@ export async function POST(request: NextRequest) {
     const audioBuffer = await textToSpeech(text, voiceId);
 
     // Return audio as response
-    return new NextResponse(audioBuffer, {
+    // Convert Buffer to Uint8Array for NextResponse
+    const uint8Array = new Uint8Array(audioBuffer);
+    return new NextResponse(uint8Array, {
       status: 200,
       headers: {
         "Content-Type": "audio/mpeg",

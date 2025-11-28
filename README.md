@@ -210,6 +210,39 @@ See [env.example](./env.example) for the complete template.
 - **Reinstall dependencies**: `rm -rf node_modules && npm install`
 - **Check Node.js version**: Requires Node.js 18+
 
+## 🚀 Deployment
+
+### Deploy to Vercel (Recommended)
+
+Vercel is the recommended platform for deploying Next.js applications. It offers:
+- ✅ Zero-configuration deployment
+- ✅ Automatic HTTPS
+- ✅ Global CDN
+- ✅ Free tier with generous limits
+- ✅ Automatic deployments from GitHub
+
+**Quick Start:**
+1. Push your code to GitHub
+2. Sign up at [vercel.com](https://vercel.com)
+3. Import your GitHub repository
+4. Add environment variables in Vercel dashboard
+5. Deploy!
+
+**📖 Full Deployment Guide:** See [VERCEL_DEPLOYMENT.md](./VERCEL_DEPLOYMENT.md) for detailed step-by-step instructions.
+
+### Environment Variables for Production
+
+When deploying, make sure to add these environment variables in your hosting platform:
+
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `GEMINI_API_KEY` | ✅ Yes | Google Gemini API key |
+| `ELEVENLABS_API_KEY` | ⚠️ Optional | ElevenLabs TTS API key |
+| `NEXT_PUBLIC_SUPABASE_URL` | ⚠️ Optional | Supabase URL (if using cloud storage) |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | ⚠️ Optional | Supabase anonymous key |
+
+**⚠️ Important:** Never commit `.env.local` to Git. Use your hosting platform's environment variable settings instead.
+
 ## 🎯 Development Roadmap
 
 - [x] Step 1: Project Scaffolding
@@ -245,9 +278,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- 📖 [Documentation](./GET_API_KEYS.md) - API key setup guide
+- 📖 [API Keys Guide](./env.example) - Environment variables template
 - 🔒 [Security Guide](./SECURITY.md) - Security best practices
-- 🚀 [GitHub Setup](./GITHUB_SETUP.md) - Deployment guide
+- 🚀 [Vercel Deployment](./VERCEL_DEPLOYMENT.md) - Step-by-step deployment guide
 - 🐛 [Report Issues](https://github.com/YOUR_USERNAME/ai-fitness-coach/issues) - Found a bug?
 
 ---
