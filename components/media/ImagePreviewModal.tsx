@@ -36,12 +36,16 @@ export default function ImagePreviewModal({
         }),
       });
 
+      // Try to read any error details from the API before throwing
+      const data = await response.json().catch(() => null);
+
       if (!response.ok) {
-        throw new Error("Failed to generate image");
+        const message =
+          (data as any)?.error || "Failed to generate image. Please try again.";
+        throw new Error(message);
       }
 
-      const data = await response.json();
-      setImageUrl(data.imageUrl || data.url);
+      setImageUrl((data as any)?.imageUrl || (data as any)?.url);
     } catch (err: any) {
       setError(err.message || "Failed to generate image. Please try again.");
       console.error("Image generation error:", err);
